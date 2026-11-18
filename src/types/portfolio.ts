@@ -53,6 +53,8 @@ export type ProjectCategory =
   | "Productivity & Systems";
 
 export interface ProjectItem {
+  cardTitle?: string;
+  cardSummary?: string;
   slug: string;
   number: string;
   title: string;

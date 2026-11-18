@@ -10,6 +10,8 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
 export const projectsData: ProjectItem[] = [
   {
     slug: "imajica",
+    cardTitle: "Imajica",
+    cardSummary: "Clinic operations and staff training in one workspace.",
     number: "01",
     title: "Imajica Aesthetics ERP & LMS",
     tagline:
@@ -163,6 +165,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "multitop",
+    cardTitle: "Multi-top",
+    cardSummary: "Distribution orders, deliveries, and collections.",
     number: "02",
     title: "Multi-top Distribution ERP & Delivery System",
     tagline:
@@ -220,6 +224,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "boti-bot",
+    cardTitle: "Boti-bot",
+    cardSummary: "Jira context and isolated QA for AI coding workflows.",
     number: "03",
     title: "Boti-bot",
     tagline:
@@ -292,6 +298,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "suma",
+    cardTitle: "Suma",
+    cardSummary: "Private budgeting for Windows, with a clear spending limit.",
     number: "04",
     title: "Suma",
     tagline:
@@ -348,6 +356,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "nudgi",
+    cardTitle: "Nudgi",
+    cardSummary: "Local-first reminders for recurring expenses.",
     number: "05",
     title: "Nudgi",
     tagline:
@@ -407,6 +417,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "code-terra",
+    cardTitle: "Code Terra",
+    cardSummary: "Explore code repositories as interactive terrain.",
     number: "06",
     title: "Code Terra",
     tagline:
@@ -464,6 +476,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "docs-for-me",
+    cardTitle: "Docs for Me",
+    cardSummary: "Local AI guides for code reviews and documentation.",
     number: "07",
     title: "Docs for Me",
     tagline:
@@ -526,6 +540,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "demoshield",
+    cardTitle: "DemoShield",
+    cardSummary: "Find and redact exposed secrets in screen recordings.",
     number: "08",
     title: "DemoShield",
     tagline:
@@ -583,6 +599,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "maxtel",
+    cardTitle: "Maxtel HRIS",
+    cardSummary: "Employee relations and accountability workflows.",
     number: "09",
     title: "Maxtel HRIS & Payroll System",
     tagline:
@@ -636,6 +654,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "shinryo",
+    cardTitle: "Shinryo Payroll",
+    cardSummary: "Attendance management and payroll cutoff reporting.",
     number: "10",
     title: "Shinryo Philippines Payroll & DTR System",
     tagline:
@@ -716,6 +736,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "delibites",
+    cardTitle: "Delibites HRIS",
+    cardSummary: "Incident reports and employee disciplinary workflows.",
     number: "11",
     title: "Delibites HRIS & Payroll System",
     tagline:
@@ -780,6 +802,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "injap",
+    cardTitle: "Injap & Inco Wallet",
+    cardSummary: "Member wallets, marketplace commissions, and chat.",
     number: "12",
     title: "Injap (Innovation Japan) & Inco Wallet",
     tagline:
@@ -848,6 +872,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "balitaan",
+    cardTitle: "Balitaan",
+    cardSummary: "Community price reports and nearby discovery.",
     number: "13",
     title: "Balitaan",
     tagline:
@@ -923,6 +949,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "check-me-up",
+    cardTitle: "Check me Up",
+    cardSummary: "Private desktop activity and focus tracking.",
     number: "14",
     title: "Check me Up",
     tagline:
@@ -963,6 +991,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "wingman",
+    cardTitle: "Wingman",
+    cardSummary: "Jobs, clients, and earnings for game boosters.",
     number: "15",
     title: "Wingman",
     tagline:
@@ -1030,6 +1060,111 @@ export const projectsData: ProjectItem[] = [
       "Interactive chat-style Pilot Creation flow for logging new boosting jobs quickly",
       "Customized Payment Methods and service pricing configuration",
     ],
+  },
+  {
+    "slug": "growcom",
+    cardTitle: "Growcom Events",
+    cardSummary: "Growtopia tools and reminders, right in Discord.",
+    "number": "16",
+    "title": "Growcom Events",
+    "tagline": "Growtopia community tools, item data, and Discord automation in one bot.",
+    "shortDescription": "A Discord toolkit for the Growcom community, bringing together harvest reminders, item and recipe lookups, trade calculators, daily event boards, and trivia.",
+    "fullDescription": "Built for the Growcom Growtopia Discord community, Growcom Events connects everyday player tools with a shared FastAPI data service. It parses Growtopia items.dat data, extracts sprites from .rttex textures, and combines item information with wiki lookups. Modular Discord commands cover harvesting, crafting, farming, trading, cooking, and game guides, alongside scheduled boards and community trivia.",
+    "category": "Consumer & Social",
+    "workType": "Personal",
+    "year": "2026",
+    "status": "Shipped",
+    "role": "Creator & Developer",
+    "featured": false,
+    "accentColor": "#78E0AE",
+    "coverImage": "/projects/growcom/banner-refined.png",
+    "screenshots": [
+      {
+        "src": "/projects/growcom/banner-refined.png",
+        "alt": "Growcom Events banner with the community badge and project title",
+        "caption": "Refined project artwork based on the supplied Growcom community banner."
+      },
+      {
+        "src": "/projects/growcom/banner-original.png",
+        "alt": "Original Growcom Events project banner",
+        "caption": "Original project banner supplied by Manwel, with feature and technology details."
+      }
+    ],
+    "techStack": [
+      "Python",
+      "discord.py",
+      "FastAPI",
+      "httpx",
+      "Docker"
+    ],
+    "keyFeatures": [
+      "Harvest calculators with ready-time reminders and player notifications",
+      "Item encyclopedia, sprite extraction, recipe lookups, and recursive mass planning",
+      "Trade-rate calculations, farmable comparisons, and cooking timelines",
+      "Scheduled daily event boards, trivia, and persistent community leaderboards",
+      "Dedicated command channels and per-user cooldowns"
+    ],
+    "architectureHighlights": [
+      "Modular Discord cogs communicate with a central FastAPI service through an asynchronous HTTP client",
+      "Binary items.dat parsing and .rttex conversion support item data and sprite extraction",
+      "Unified launcher starts the bot and API together, with Docker and Render deployment configuration"
+    ],
+    "links": {
+      "repo": "https://github.com/manwelAC/Growcom"
+    }
+  },
+  {
+    "slug": "agent-farmers",
+    cardTitle: "Agent Farmers",
+    cardSummary: "Plan and review tasks with your own AI crew.",
+    "number": "17",
+    "title": "Agent Farmers",
+    "tagline": "A farm-themed desktop workspace where your AI crew plans, works, and reports back.",
+    "shortDescription": "A Godot and Python desktop preview for planning AI work, assigning provider-backed workers, reviewing outputs, and keeping a local project journal.",
+    "fullDescription": "Agent Farmers turns AI task coordination into a farm-themed desktop workflow. Users connect installed provider CLIs, define workers with models and reusable instructions, discuss a goal with a planner, and approve an assigned task plan. A Python core executes tasks sequentially, optionally requests an independent review, and records results and output files in local history. The project is an engineering preview, with Markdown memory export and a portable Windows build.",
+    "category": "AI & Developer Tools",
+    "workType": "Personal",
+    "year": "2026",
+    "status": "Building",
+    "role": "Creator & Developer",
+    "featured": false,
+    "accentColor": "#EFCE83",
+    "coverImage": "/projects/agent-farmers/banner-refined.png",
+    "screenshots": [
+      {
+        "src": "/projects/agent-farmers/banner-refined.png",
+        "alt": "Agent Farmers banner featuring the voxel farm and farm steward",
+        "caption": "Refined project artwork based on the supplied Agent Farmers voxel farm banner."
+      },
+      {
+        "src": "/projects/agent-farmers/banner-original.png",
+        "alt": "Original Agent Farmers project banner",
+        "caption": "Original project banner supplied by Manwel, with feature and technology details."
+      }
+    ],
+    "techStack": [
+      "Godot",
+      "GDScript",
+      "Python",
+      "SQLite",
+      "WebSocket"
+    ],
+    "keyFeatures": [
+      "Discover provider CLIs and configure named workers with models, roles, and instructions",
+      "Discuss goals with a planner and assign workers to an editable task plan",
+      "Approve task assignments and file or web permissions before execution",
+      "Sequential task execution with optional independent review and one correction attempt",
+      "Local project history, output previews, and Markdown memory notes for an Obsidian-compatible vault"
+    ],
+    "architectureHighlights": [
+      "Godot desktop communicates with a Python core over local HTTP and WebSocket connections",
+      "A shared launcher manages desktop and core startup on an automatically assigned local port",
+      "SQLite stores task history; Markdown exports retain project briefs and results",
+      "Provider adapters support Codex, Antigravity, Claude Code, and OpenCode, subject to installed runtimes and provider capabilities"
+    ],
+    "links": {
+      "repo": "https://github.com/manwelAC/agent-farmers"
+    }
   },
 ];
 

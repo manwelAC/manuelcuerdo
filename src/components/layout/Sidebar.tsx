@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ import { projectsData } from "@/data/projects";
 import { usePortfolio } from "@/context/PortfolioContext";
 import { animateScrollToElement, animateScrollToY } from "@/utils/scroll";
 
-type HomeSection = "index" | "experience" | "consulting";
+type HomeSection = "index" | "projects" | "experience" | "consulting";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -18,12 +18,10 @@ export function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHomeSection, setActiveHomeSection] =
     useState<HomeSection>("index");
-  const isProgrammaticScroll = useRef(false);
 
   const navItems = [
     { label: "Index", href: "/", section: "index" as const },
-    { label: `Projects (${projectsData.length})`, href: "/projects" },
-    { label: "Stack", href: "/stack" },
+    { label: `Projects (${projectsData.length})`, href: "/projects", section: "projects" as const },
     {
       label: "Experience",
       href: "/#experience",
@@ -34,6 +32,7 @@ export function Sidebar() {
       href: "/#consulting",
       section: "consulting" as const,
     },
+    { label: "Stack", href: "/stack" },
   ];
 
   // Scroll-spy & initial hash handling on the home page
@@ -41,8 +40,7 @@ export function Sidebar() {
     if (pathname !== "/") return;
 
     const computeActiveSection = () => {
-      if (isProgrammaticScroll.current) return;
-
+      const projectsEl = document.getElementById("projects");
       const experienceEl = document.getElementById("experience");
       const consultingEl = document.getElementById("consulting");
 
@@ -69,18 +67,19 @@ export function Sidebar() {
         }
       }
 
+      if (projectsEl && projectsEl.getBoundingClientRect().top <= window.innerHeight * 0.4) {
+        setActiveHomeSection("projects");
+        return;
+      }
+
       setActiveHomeSection("index");
     };
 
     // Check URL hash on mount or route return to "/"
     const hash = window.location.hash.replace("#", "");
-    if (hash === "experience" || hash === "consulting") {
-      setActiveHomeSection(hash);
-      isProgrammaticScroll.current = true;
+    if (hash === "projects" || hash === "experience" || hash === "consulting") {
       requestAnimationFrame(() => {
-        animateScrollToElement(hash, 88, 650, () => {
-          isProgrammaticScroll.current = false;
-        });
+        animateScrollToElement(hash, 88, 650, computeActiveSection);
       });
     } else {
       computeActiveSection();
@@ -102,19 +101,13 @@ export function Sidebar() {
 
     if (pathname === "/" && item.section) {
       e.preventDefault();
-      setActiveHomeSection(item.section);
-      isProgrammaticScroll.current = true;
 
       if (item.section === "index") {
         window.history.pushState(null, "", "/");
-        animateScrollToY(0, 650, () => {
-          isProgrammaticScroll.current = false;
-        });
+        animateScrollToY(0, 650);
       } else {
         window.history.pushState(null, "", `/#${item.section}`);
-        animateScrollToElement(item.section, 88, 650, () => {
-          isProgrammaticScroll.current = false;
-        });
+        animateScrollToElement(item.section, 88, 650);
       }
     }
   };
@@ -123,7 +116,7 @@ export function Sidebar() {
     if (pathname === "/") {
       return item.section === activeHomeSection;
     }
-    if (!item.section) {
+    if (!item.section || item.section === "projects") {
       return pathname.startsWith(item.href);
     }
     return false;

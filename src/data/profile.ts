@@ -80,7 +80,7 @@ export const profileData: ProfileConfig = {
   ],
   stats: [
     {
-      value: "15",
+      value: "17",
       label: "SHIPPED & ARCHIVED BUILDS",
       trend: "↗",
       href: "/projects",

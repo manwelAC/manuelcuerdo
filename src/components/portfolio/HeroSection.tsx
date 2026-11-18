@@ -6,6 +6,7 @@ import { ArrowUpRight, Check, Copy } from "lucide-react";
 import { profileData } from "@/data/profile";
 import { projectsData } from "@/data/projects";
 import { animateScrollToElement } from "@/utils/scroll";
+import { RecentProjects } from "@/components/portfolio/RecentProjects";
 
 export function HeroSection() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -139,6 +140,7 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+      <RecentProjects />
     </section>
   );
 }

@@ -95,16 +95,6 @@ export function ProjectCard({
 
   return (
     <article className="group flex flex-col space-y-3.5">
-      {/* Top Editorial Index Line */}
-      <div className="flex items-center justify-between gap-2 font-mono text-xs text-[var(--text-muted)]">
-        <span className="truncate">
-          {project.number} — {project.role}
-        </span>
-        <span className="shrink-0">
-          {project.workType} · {project.year}
-        </span>
-      </div>
-
       {/* Clean Uncluttered Screenshot Frame */}
       <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-[var(--border-color)] bg-[var(--surface-elevated)]">
         <img
@@ -155,28 +145,20 @@ export function ProjectCard({
         <div className="flex items-start justify-between gap-3">
           <Link
             href={`/projects/${project.slug}`}
-            className="font-display text-lg font-bold text-[var(--text-primary)] group-hover:underline underline-offset-4 decoration-1"
+            className="font-display text-base font-semibold text-[var(--text-primary)] group-hover:underline underline-offset-4 decoration-1"
           >
-            {project.title}
+            {project.cardTitle ?? project.title}
           </Link>
 
-          <Link
-            href={`/projects/${project.slug}`}
-            className="text-[var(--text-muted)] hover:text-[var(--text-primary)] shrink-0 pt-1 transition-colors"
-            aria-label={`View ${project.title}`}
-          >
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          <span className="shrink-0 pt-0.5 font-mono text-[10px] text-[var(--text-muted)]">
+            {project.year}
+          </span>
         </div>
 
-        <p className="text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-2">
-          {project.shortDescription}
+        <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+          {project.cardSummary ?? project.shortDescription}
         </p>
 
-        <div className="pt-1 font-mono text-[11px] text-[var(--text-muted)]">
-          {project.techStack.slice(0, 5).join(" · ")}
-          {project.status === "Archived" && " · Archived"}
-        </div>
       </div>
     </article>
   );

@@ -9,6 +9,7 @@ export default function HomePage() {
     <div>
       <HeroSection />
       <ProjectShowcaseSection
+        limit={4}
         sectionNumber="01"
         sectionTitle="Projects"
         showSearch={false}

@@ -1,5 +1,7 @@
 node_modules
 .next
+.next-dev
+.next-dev-server*.log
 out
 dist
 .DS_Store
